@@ -28,6 +28,7 @@
     "cfonts": "^3.2.0",
     "dotenv": "^16.4.5",
     "javascript-obfuscator": "^4.1.0",
+    "less": "^4.2.0",
     "minimist": "^1.2.8",
     "portfinder": "^1.0.32",
     "rollup-plugin-esbuild": "^6.1.1",

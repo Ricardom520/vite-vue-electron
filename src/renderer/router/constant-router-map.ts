@@ -7,8 +7,35 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/',
+    redirect: '/recommend',
     name: '总览',
-    component: () => import('@renderer/views/home/index.vue')
+    component: () => import('@renderer/views/home/index.vue'),
+    children: [
+      {
+        path: 'recommend',
+        component: () => import('@renderer/views/subPages/recommend/index.vue')
+      },
+      {
+        path: 'download',
+        component: () => import('@renderer/views/subPages/download/index.vue')
+      },
+      {
+        path: 'history',
+        component: () => import('@renderer/views/subPages/history/index.vue')
+      },
+      {
+        path: 'like',
+        component: () => import('@renderer/views/subPages/like/index.vue')
+      },
+      {
+        path: 'musicRoom',
+        component: () => import('@renderer/views/subPages/musicRoom/index.vue')
+      },
+      {
+        path: 'video',
+        component: () => import('@renderer/views/subPages/video/index.vue')
+      }
+    ]
   }
 ]
 
