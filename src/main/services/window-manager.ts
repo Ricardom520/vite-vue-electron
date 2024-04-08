@@ -23,6 +23,7 @@ class MainInit {
       titleBarOverlay: {
         color: "#fff",
       },
+      // hidden 可以隐藏默认菜单，只展示关闭缩小按钮
       titleBarStyle: config.IsUseSysTitle ? "default" : "hidden",
       height: 800,
       useContentSize: true,

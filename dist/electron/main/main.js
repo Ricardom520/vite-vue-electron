@@ -17823,6 +17823,7 @@ class MainInit {
       titleBarOverlay: {
         color: "#fff"
       },
+      // hidden 可以隐藏默认菜单，只展示关闭缩小按钮
       titleBarStyle: "hidden",
       height: 800,
       useContentSize: true,
