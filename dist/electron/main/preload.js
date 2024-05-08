@@ -1,7 +1,6 @@
 'use strict';
 
 var electron = require('electron');
-var os = require('os');
 
 electron.contextBridge.exposeInMainWorld("ipcRenderer", {
   send: (channel, args) => electron.ipcRenderer.send(channel, args),
@@ -11,14 +10,4 @@ electron.contextBridge.exposeInMainWorld("ipcRenderer", {
   invoke: (channel, args) => electron.ipcRenderer.invoke(channel, args),
   removeAllListeners: (channel) => electron.ipcRenderer.removeAllListeners(channel)
 });
-electron.contextBridge.exposeInMainWorld("systemInfo", {
-  platform: os.platform(),
-  release: os.release(),
-  arch: os.arch()
-});
-electron.contextBridge.exposeInMainWorld("shell", electron.shell);
-electron.contextBridge.exposeInMainWorld("crash", {
-  start: () => {
-    process.crash();
-  }
-});
+console.log("preloaded!");

@@ -36,6 +36,10 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@renderer/views/subPages/video/index.vue')
       }
     ]
+  },
+  {
+    path: '/lyrics/tool',
+    component: () => import('@renderer/views/lyrics/tool.vue')
   }
 ]
 

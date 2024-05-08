@@ -12,16 +12,18 @@ contextBridge.exposeInMainWorld('ipcRenderer', {
   removeAllListeners: (channel: string) => ipcRenderer.removeAllListeners(channel)
 })
 
-contextBridge.exposeInMainWorld("systemInfo", {
-  platform: platform(),
-  release: release(),
-  arch: arch()
-})
+// contextBridge.exposeInMainWorld("systemInfo", {
+//   platform: platform(),
+//   release: release(),
+//   arch: arch()
+// })
 
-contextBridge.exposeInMainWorld("shell", shell)
+// contextBridge.exposeInMainWorld("shell", shell)
 
-contextBridge.exposeInMainWorld("crash", {
-  start: () => {
-      process.crash()
-  }
-})
+// contextBridge.exposeInMainWorld("crash", {
+//   start: () => {
+//       process.crash()
+//   }
+// })
+
+console.log("preloaded!")

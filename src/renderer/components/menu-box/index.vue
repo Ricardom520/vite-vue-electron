@@ -5,17 +5,17 @@
     </div>
   </div>
   <div>
-    <Menu :datas="onlineMusic" @change="onMenuChange"></Menu>
-    <Menu :datas="musicMusic" @change="onMenuChange"></Menu>
+    <wk-menu :datas="onlineMusic" @change="onMenuChange"></wk-menu>
+    <wk-menu :datas="musicMusic" @change="onMenuChange"></wk-menu>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { reactive, ref, watch, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
-import Menu from '../menu/index.vue'
+import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
+const router = useRouter()
 
 let currentPath = ref(route.path)
 
@@ -73,7 +73,9 @@ function onMenuChange(params) {
   console.log('params:', params)
   const { value } = params
 
-  currentPath.value = value
+  currentPath.value = '/home/' + value
+
+  router.push(currentPath.value);
 }
 
 function handleRoute() {
@@ -115,7 +117,6 @@ watch(() => route.path, (to) => {
 })
 
 watch(() => currentPath.value, () => {
-  console.log('????')
   handleRoute()
 })
 </script>

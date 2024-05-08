@@ -14,6 +14,7 @@ const props = defineProps({
 const emit = defineEmits(['onClick'])
 
 function onClick() {
+  console.log('onClick')
   emit('onClick', props)
 }
 </script>
